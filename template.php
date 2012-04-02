@@ -12,6 +12,7 @@
 	<title><m:title></title>
 	<m:favicon>
 	<link rel="stylesheet" type="text/css" href="<m:style>" media="all">
+	<link rel="stylesheet" type="text/css" href="/Meruert/themes/main-test/concept.css" media="all">
 	<m:js>
 	<m:rss>
 	<script type="text/javascript" src="/Meruert/themes/main-test/jquery-1.7.1.js"></script>
@@ -42,39 +43,7 @@
 		</div>
 		<div id="footer"><m:copy></div>
 	</div>
-	<div id="dialog" class="window">
-	<form id="modal">
-		<div class="modal-elem">
-		<label for="background-color">
-			Цвет фона:
-		</label>
-		<p><input name="background-color" type="text">
-			<input type="radio" value="px" name="radio-color">px
-			<input type="radio" value="%" name="radio-color">%
-		</p>
-		</div>
-		<div class="modal-elem">
-		<label for="height">
-			Высота блока:
-		</label>
-		<p><input name="height" type="text">
-			<input type="radio" value="px" name="radio-height">px
-			<input type="radio" value="%" name="radio-height">%
-		</p>
-		</div>
-		<div class="modal-elem">
-		<label for="width">
-			Ширина блока:
-		</label>
-		<p><input name="width" type="text">
-		<input type="radio" value="px" name="radio-width">px
-		<input type="radio" value="%" name="radio-width">%
-		</p>
-		</div>
-		<input type="password" value="Password" onclick="this.value=''"/>
-		<div class="d-login"><input type="image" alt="Login" title="Login" src="images/login-button.png"/></div>
-	</form>
-	</div>
+	<div id="dialogMain"></div>
 </body>
 </html>
 </m:html>
