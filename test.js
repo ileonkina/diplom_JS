@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$('.editable').append('<div class = "edit-btn">Edit</div>');
+	$('body').append('<div id="dialogMain"></div>');
     // delegate the mouseover, mouseout events handler
 	$('.editable').live('mouseover', function () {
 			$('.editable').removeClass('active');
@@ -16,7 +17,19 @@ $(document).ready(function(){
 			return false;
     });
     $('.edit-btn').live('click', function() {
-		console.log("bubu");
+		modalInit();
     });
-	
+	$('#closebtn').live('click', function() {
+		$('#dialogMain').animate({ opacity: "hide" }, "fast");;
+	})
 });
+function modalInit(){
+	if ($('#dialogMain').find('#modal').length == 0) {
+		$('#dialogMain').load('/Meruert/themes/main-test/modal.html');
+	} else {
+		//('#dialog#modal').show();
+		console.log('ururu');
+	}
+	$('#dialogMain').hide();
+	$('#dialogMain').animate({ opacity: "show" }, "medium");
+}

@@ -4,28 +4,19 @@
 		<label for="background-color">
 			Цвет фона:
 		</label>
-		<p><input name="background-color" type="text">
-			<input type="radio" value="px" name="radio-color">px
-			<input type="radio" value="%" name="radio-color">%
-		</p>
+		<input name="background-color" type="text">
 		</div>
 		<div class="modal-elem">
 		<label for="height">
-			Высота блока:
+			Высота блока(*% или *px):
 		</label>
-		<p><input name="height" type="text">
-			<input type="radio" value="px" name="radio-height">px
-			<input type="radio" value="%" name="radio-height">%
-		</p>
+		<input name="height" type="text">
 		</div>
 		<div class="modal-elem">
 		<label for="width">
-			Ширина блока:
+			Ширина блока (*% или *px):
 		</label>
-		<p><input name="width" type="text">
-		<input type="radio" value="px" name="radio-width">px
-		<input type="radio" value="%" name="radio-width">%
-		</p>
+		<input name="width" type="text">
 		</div>
 		<div class="modal-elem">
 		<label for="bg">
@@ -33,6 +24,9 @@
 		</label>
 		<input type="file" name="bg">
 		</div>
-		<div class="d-login"><input type="image" alt="Login" title="Login" src="images/login-button.png"/></div>
+		<div class="modal-elem" id="closebtn">
+			<input type="button" href="#" value="Close" name="close">
+		</div>
+		<!--<div class="d-login"><input type="image" alt="Login" title="Login" src="images/login-button.png"/></div>-->
 	</form>
 </div>
