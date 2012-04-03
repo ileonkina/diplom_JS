@@ -1,50 +1,49 @@
-﻿<div id="dialog" class="window">
+﻿<div id="editModuleDialog" class="editModuleWindow">
 	<form id="modal"> <!--method="post">-->
 		<div class="modal-elem">
 			<label for="background-color">
 				Цвет фона:
 			</label>
-			<input name="background-color" type="text" id="colorinput">
+			<input name="background-color" type="text" id="bgcolorinput">
 		</div>
-		<!--<div class="modal-elem">
+		<div class="modal-elem">
 			<label for="height">
-				Высота блока(*% или *px):
+				Высота блока:
 			</label>
-			<input name="height" type="text">
+			<input name="height" type="text" id="heihgtinput">
 		</div>
 		<div class="modal-elem">
 			<label for="width">
-				Ширина блока (*% или *px):
+				Ширина блока:
 			</label>
-			<input name="width" type="text">
+			<input name="width" type="text" id="widthinput">
 		</div>
 		<div class="modal-elem">
 			<label for="background-color">
-				Радиус закругления:
+				Радиус закругления углов:
 			</label>
-			<input name="background-color" type="text">
+			<input name="background-color" type="text" id="radiusinput">
 		</div>
 		<div class="modal-elem">
 			<label for="font-style">
-				Шрифт:
+				Гарнитура:
 			</label>
-			<input type="text" name="font-style">
+			<input type="text" name="font-style" id="garnitinput">
+		</div>
+		<div class="modal-elem">
+			<label for="font-size">
+				Кегль:
+			</label>
+			<input type="text" name="font-size" id="keglinput">
 		</div>
 		<div class="modal-elem">
 			<label for="text-color">
 				Цвет текста:
 			</label>
-			<input name="text-color" type="text">
+			<input name="text-color" type="text" id="textcolorinput">
+		</div> 
+			<div id="applybtn">
+				<input type="button" value="Apply">
 		</div>
-			<div class="modal-elem">
-			<label for="bg">
-				Фоновое изображение:
-			</label>
-			<input type="file" name="bg">
-			</div> -->
-			<div class="modal-elem" id="applybtn">
-				<input type="submit" value="Apply">
-		</div>
-		<!--<div class="d-login"><input type="image" alt="Login" title="Login" src="images/login-button.png"/></div>-->
 	</form>
 </div>

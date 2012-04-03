@@ -1,6 +1,6 @@
 var node;
 $(document).ready(function(){
-	$('.editable').append('<div class = "edit-btn">Edit</div>');
+	$('.editable').append('<div class = "edit-btn">Редактировать</div>');
 	$('body').append('<div id="dialogMain"></div>');
     // delegate the mouseover, mouseout events handler
 	$('.editable').live('mouseover', function () {
@@ -26,7 +26,7 @@ $(document).ready(function(){
     });
 	$('#applybtn').live('click', function() {
 		//e.preventDefault();
-		var z = $('#colorinput').val();
+		var z = $('#bgcolorinput').val();
 		//$('#colorinput').val(z + ' ' + node);
 		//console.log($('#colorinput').val());
 		//var m_node=$(this).parent('form').serialize();
@@ -41,5 +41,17 @@ function modalInit(){
 		$('#dialogMain').load('/Meruert/themes/main-test/modal.html');
 		$('#dialogMain').hide();
 	}
+	console.log($('#bgcolorinput').attr('name'));
+	$('#bgcolorinput').val($('#'+node).css('background-color'));
+	/*$('#bgcolorinput').val($('#'+node).css('background-color'));
+	$('#bgcolorinput').val($('#'+node).css('background-color'));
+	$('#bgcolorinput').val($('#'+node).css('background-color'));
+	$('#bgcolorinput').val($('#'+node).css('background-color'));
+	$('#bgcolorinput').val($('#'+node).css('background-color'));
+	$('#bgcolorinput').val($('#'+node).css('background-color'));*/
+	/*$(".modal-elem").each(function(i) {
+		console.log("tada");
+		//$('#' + this.id).val($('#' + node).css(this.name));
+		});*/
 	$('#dialogMain').animate({ opacity: "show" }, "medium");
 }
