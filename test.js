@@ -1,3 +1,4 @@
+var node;
 $(document).ready(function(){
 	$('.editable').append('<div class = "edit-btn">Edit</div>');
 	$('body').append('<div id="dialogMain"></div>');
@@ -17,11 +18,23 @@ $(document).ready(function(){
 		return false;
     });
     $('.edit-btn').live('click', function() {
+		node = $(this).parent('div').attr('id');
 		modalInit();
+		//$.ajax({method:'get', url:'/Meruert/themes/main-test/now.php', data:node, dataType: 'text'});
+		//console.log(node);
+		//$.post('/Meruert/themes/main-test/now.php', node);
     });
 	$('#applybtn').live('click', function() {
-		$('#dialogMain').animate({ opacity: "hide" }, "fast");;
-	})
+		//e.preventDefault();
+		var z = $('#colorinput').val();
+		//$('#colorinput').val(z + ' ' + node);
+		//console.log($('#colorinput').val());
+		//var m_node=$(this).parent('form').serialize();
+		//console.log(m_node);
+		//$.ajax({method:'get', url:'/Meruert/themes/main-test/now.php', data:node, dataType: 'text'});
+		$('#dialogMain').animate({ opacity: "hide" }, "fast");
+		$('#'+node).css('background-color',z);
+	});
 });
 function modalInit(){
 	if ($('#dialogMain').find('#modal').length == 0) {
