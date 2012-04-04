@@ -27,13 +27,18 @@ $(document).ready(function(){
 		//console.log($('#colorinput').val());
 		//var m_node=$(this).parent('form').serialize();
 		//console.log(m_node);
-		/*$(".modal-elem").each(function(i) {
-			var inputId = $(this).children('input').attr('id');
-			var inputName = $(this).children('input').attr('name');
-			$('#' + inputId).val($('#'+node).css(inputName));
-		});*/
 		//$.post{method:'get', url:'/Meruert/themes/main-test/now.php', data:node, dataType: 'text'});
 		$('#dialogMain').animate({ opacity: "hide" }, "fast");
+		obj = {'id':node};
+		$(".modal-elem").each(function(i) {
+			var inputId1 = $(this).children('input').attr('id');
+			var inputName1 = $(this).children('input').attr('name');
+			obj[inputName1] = $('#' + inputId1).val();
+		});
+		//console.log(obj);
+		$.post('/Meruert/themes/main-test/now.php', obj, function(){
+		location.reload;
+		});
 		//$('#'+node).css('background-color',z);
 		//$('#'+node).css('background-color',z);
 		//location.reload(true);
