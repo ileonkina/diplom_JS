@@ -1,6 +1,6 @@
-var node;
+Ôªøvar node;
 $(document).ready(function(){
-	$('.editable').append('<div class = "edit-btn">–Â‰‡ÍÚËÓ‚‡Ú¸</div>');
+	$('.editable').append('<div class = "edit-btn">–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞—Ç—å</div>');
 	$('body').append('<div id="dialogMain"></div>');
     // delegate the mouseover, mouseout events handler
 	$('.editable').live('mouseover', function () {
@@ -20,38 +20,39 @@ $(document).ready(function(){
     $('.edit-btn').live('click', function() {
 		node = $(this).parent('div').attr('id');
 		modalInit();
-		//$.ajax({method:'get', url:'/Meruert/themes/main-test/now.php', data:node, dataType: 'text'});
-		//console.log(node);
-		//$.post('/Meruert/themes/main-test/now.php', node);
     });
 	$('#applybtn').live('click', function() {
-		//e.preventDefault();
-		var z = $('#bgcolorinput').val();
+		//var z = $('#bgcolorinput').val();
 		//$('#colorinput').val(z + ' ' + node);
 		//console.log($('#colorinput').val());
 		//var m_node=$(this).parent('form').serialize();
 		//console.log(m_node);
-		//$.ajax({method:'get', url:'/Meruert/themes/main-test/now.php', data:node, dataType: 'text'});
+		/*$(".modal-elem").each(function(i) {
+			var inputId = $(this).children('input').attr('id');
+			var inputName = $(this).children('input').attr('name');
+			$('#' + inputId).val($('#'+node).css(inputName));
+		});*/
+		//$.post{method:'get', url:'/Meruert/themes/main-test/now.php', data:node, dataType: 'text'});
 		$('#dialogMain').animate({ opacity: "hide" }, "fast");
-		$('#'+node).css('background-color',z);
+		//$('#'+node).css('background-color',z);
+		//$('#'+node).css('background-color',z);
+		//location.reload(true);
 	});
 });
 function modalInit(){
 	if ($('#dialogMain').find('#modal').length == 0) {
-		$('#dialogMain').load('/Meruert/themes/main-test/modal.html');
+		$('#dialogMain').load('/Meruert/themes/main-test/modal.html',{},function (){
+			inputValue();
+		});
 		$('#dialogMain').hide();
 	}
-	console.log($('#bgcolorinput').attr('name'));
-	$('#bgcolorinput').val($('#'+node).css('background-color'));
-	/*$('#bgcolorinput').val($('#'+node).css('background-color'));
-	$('#bgcolorinput').val($('#'+node).css('background-color'));
-	$('#bgcolorinput').val($('#'+node).css('background-color'));
-	$('#bgcolorinput').val($('#'+node).css('background-color'));
-	$('#bgcolorinput').val($('#'+node).css('background-color'));
-	$('#bgcolorinput').val($('#'+node).css('background-color'));*/
-	/*$(".modal-elem").each(function(i) {
-		console.log("tada");
-		//$('#' + this.id).val($('#' + node).css(this.name));
-		});*/
+	inputValue();
 	$('#dialogMain').animate({ opacity: "show" }, "medium");
+}
+function inputValue() {
+$(".modal-elem").each(function(i) {
+		var inputId = $(this).children('input').attr('id');
+		var inputName = $(this).children('input').attr('name');
+		$('#' + inputId).val($('#'+node).css(inputName));
+	});
 }
