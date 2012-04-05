@@ -1,0 +1,6 @@
+Past it in template.php
+
+<link rel="stylesheet" type="text/css" href="/Meruert/themes/main-test/themesEditor/concept.css" media="all">
+<script type="text/javascript" src="/Meruert/themes/main-test/themesEditor/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="/Meruert/themes/main-test/themesEditor/test.js"></script>
+<link rel="stylesheet" type="text/css" href="/Meruert/themes/main-test/themesEditor/modified.css" media="all">

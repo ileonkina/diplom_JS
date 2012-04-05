@@ -24,24 +24,28 @@ $(document).ready(function(){
     });
 	$('#closeModalBtn').live('click', function() {
 		$('#dialogMain').animate({ opacity: "hide" }, "fast");
+		location.reload();
 	})
+	$('.modal-elem input').live('keyup', function() {
+		$('#'+node).css($(this).attr('name'),$(this).val());
+	});
 	$('#applybtn').live('click', function() {
 		$('#dialogMain').animate({ opacity: "hide" }, "fast");
 		obj = {'id':node};
 		$(".modal-elem").each(function(i) {
-			var inputId1 = $(this).children('input').attr('id');
-			var inputName1 = $(this).children('input').attr('name');
-			obj[inputName1] = $('#' + inputId1).val();
+			var inputId = $(this).children('input').attr('id');
+			var inputName = $(this).children('input').attr('name');
+			obj[inputName] = $('#' + inputId).val();
 		});
 		//console.log(obj);
-		$.post('/Meruert/themes/main-test/now.php', obj, function(){
+		$.post('/Meruert/themes/main-test/themesEditor/now.php', obj, function(){
 		location.reload();
 		});
 	});
 });
 function modalInit(){
 	if ($('#dialogMain').find('#modal').length == 0) {
-		$('#dialogMain').load('/Meruert/themes/main-test/modal.html',{},function (){
+		$('#dialogMain').load('/Meruert/themes/main-test/themesEditor/modal.html',{},function (){
 			inputValue();
 		});
 		$('#dialogMain').hide();
