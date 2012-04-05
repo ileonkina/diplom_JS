@@ -9,11 +9,13 @@ foreach ($obj as $key => $value) {
 	}
 }
 $temp = $temp."}";
-$position = strpos("#".$obj['id']);
-if ($position == FALSE) {
+$position = strpos($str,"#".$obj['id']);
+if ($position === false) {
 	$str = $str.$temp;
 } else {
-	str_replace(substr($str,$position,strpos($str,"}",$position) - $position),$temp,$str);
+	$length = strpos($str,"}",$position) - $position;
+	$substring = substr($str,$position,$length + 1);
+	$str = str_replace($substring,$temp,$str);
 }
 fwrite($file, $str);
 fclose($file);
