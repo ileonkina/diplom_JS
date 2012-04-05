@@ -1,6 +1,7 @@
 ﻿var node;
 $(document).ready(function(){
 	$('.editable').append('<div class = "edit-btn">Редактировать</div>');
+	$('.editable').css({'position':'relative'});
 	$('body').append('<div id="dialogMain"></div>');
     // delegate the mouseover, mouseout events handler
 	$('.editable').live('mouseover', function () {
@@ -21,13 +22,10 @@ $(document).ready(function(){
 		node = $(this).parent('div').attr('id');
 		modalInit();
     });
+	$('#closeModalBtn').live('click', function() {
+		$('#dialogMain').animate({ opacity: "hide" }, "fast");
+	})
 	$('#applybtn').live('click', function() {
-		//var z = $('#bgcolorinput').val();
-		//$('#colorinput').val(z + ' ' + node);
-		//console.log($('#colorinput').val());
-		//var m_node=$(this).parent('form').serialize();
-		//console.log(m_node);
-		//$.post{method:'get', url:'/Meruert/themes/main-test/now.php', data:node, dataType: 'text'});
 		$('#dialogMain').animate({ opacity: "hide" }, "fast");
 		obj = {'id':node};
 		$(".modal-elem").each(function(i) {
@@ -37,11 +35,8 @@ $(document).ready(function(){
 		});
 		//console.log(obj);
 		$.post('/Meruert/themes/main-test/now.php', obj, function(){
-		location.reload;
+		location.reload();
 		});
-		//$('#'+node).css('background-color',z);
-		//$('#'+node).css('background-color',z);
-		//location.reload(true);
 	});
 });
 function modalInit(){
@@ -60,4 +55,5 @@ $(".modal-elem").each(function(i) {
 		var inputName = $(this).children('input').attr('name');
 		$('#' + inputId).val($('#'+node).css(inputName));
 	});
+	//console.log($('#'+node).css('borderRadius'));
 }
