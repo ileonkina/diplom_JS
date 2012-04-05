@@ -4,3 +4,5 @@ Past it in template.php
 <script type="text/javascript" src="/Meruert/themes/main-test/themesEditor/jquery-1.7.1.js"></script>
 <script type="text/javascript" src="/Meruert/themes/main-test/themesEditor/test.js"></script>
 <link rel="stylesheet" type="text/css" href="/Meruert/themes/main-test/themesEditor/modified.css" media="all">
+
+And add class "editable" to blocks which you want to edit
